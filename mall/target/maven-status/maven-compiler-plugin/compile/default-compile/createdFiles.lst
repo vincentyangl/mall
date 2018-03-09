@@ -1,0 +1,9 @@
+com\mall\util\DbUtil.class
+com\mall\dao\ProductDao.class
+com\mall\handler\ProductServlet.class
+com\mall\model\ProductType.class
+com\mall\dao\ProductTypeDao.class
+com\mall\mapper\ProductMapper.class
+com\mall\model\Product.class
+com\mall\model\Tuser.class
+com\mall\mapper\ProductTypeMapper.class
