@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mall.mapper.PowerMapper">
+   <resultMap type="Power" id="PowerMap">
+      <result column="powerName" property="powerName"/>
+      <result column="url" property="url"/>
+      <result column="type" property="type"/>
+      <result column="powerId" property="powerId"/>
+      <association property="roles" column="pid" select="com.mall.mapper.RoleMapper.getRoleById"></association>
+   </resultMap>
+   <select id="getById" parameterType="int" resultMap="PowerMap">
+      select * from power where pid=#{value}
+   </select>
+   <select id="listAll" resultMap="PowerMap">
+      select * from power
+   </select>
+   <select id="getPowerById" parameterType="int" resultType="Power">
+      select * from power where pid in (select powerId from role_power where roleId = #{roleId})
+   </select>
+</mapper>
+
