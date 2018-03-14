@@ -4,6 +4,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 <typeAliases>
+<typeAlias type="com.mall.model.Users" alias="User"/>
+<typeAlias type="com.mall.model.Roles" alias="Role"/>
+<typeAlias type="com.mall.model.Powers" alias="Power"/>
    <typeAlias type="com.mall.model.Product" alias="Product"/>
    <typeAlias type="com.mall.model.ProductType" alias="ProductType"/>
 </typeAliases>
@@ -19,6 +22,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
       </environment>
    </environments>
    <mappers>
+   <mapper resource="com/mall/mapper/UserMapper.xml"/>
+   <mapper resource="com/mall/mapper/RoleMapper.xml"/>
+   <mapper resource="com/mall/mapper/PowerMapper.xml"/>
       <mapper resource="com/mall/mapper/ProductMapper.xml"/>
       <mapper resource="com/mall/mapper/ProductTypeMapper.xml"/>
    </mappers>

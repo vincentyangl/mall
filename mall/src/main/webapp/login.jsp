@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,19 +15,21 @@
 	<!-- load css -->
 	<link rel="stylesheet" type="text/css" href="common/layui/css/layui.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/login.css" media="all">
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 <div class="layui-canvs"></div>
+<form action="" method="post">
 <div class="layui-layout layui-layout-login">
 	<h1>
 		 <strong>LarryCMS管理系统后台</strong>
 		 <em>Management System</em>
 	</h1>
 	<div class="layui-user-icon larry-login">
-		 <input type="text" placeholder="账号" class="login_txtbx"/>
+		 <input type="text" name="uname" placeholder="账号" class="login_txtbx"/>
 	</div>
 	<div class="layui-pwd-icon larry-login">
-		 <input type="password" placeholder="密码" class="login_txtbx"/>
+		 <input type="password"  name="upwd" placeholder="密码" class="login_txtbx"/>
 	</div>
     <div class="layui-val-icon larry-login">
     	<div class="layui-code-box">
@@ -42,6 +45,7 @@
         <p>鄂xxxxxx</p>
     </div>
 </div>
+</form>
 <script type="text/javascript" src="common/layui/lay/dest/layui.all.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript" src="jsplug/jparticle.jquery.js"></script>
@@ -51,10 +55,11 @@ $(function(){
 		background: "#141414",
 		color: "#E6E6E6"
 	});
-	//登录链接测试，使用时可删除
-	$(".submit_btn").click(function(){
-	  location.href="index.jsp";
-	});
+});
+//登录链接测试，使用时可删除
+$(".submit_btn").click(function(){
+  document.forms[0].action="LoginServlet?state=login";
+  document.forms[0].submit();
 });
 </script>
 </body>
