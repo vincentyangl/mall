@@ -49,4 +49,24 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RoleServlet</display-name>
+    <servlet-name>RoleServlet</servlet-name>
+    <servlet-class>com.mall.handler.RoleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RoleServlet</servlet-name>
+    <url-pattern>/RoleServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PowerServlet</display-name>
+    <servlet-name>PowerServlet</servlet-name>
+    <servlet-class>com.mall.handler.PowerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PowerServlet</servlet-name>
+    <url-pattern>/PowerServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
