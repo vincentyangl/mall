@@ -222,6 +222,35 @@
                     </dl>
 				</li>
 				
+				 <!-- 后台管理 -->
+				<li class="layui-nav-item">
+					<a href="javascript:;">
+					   <i class="iconfont icon-m-members" ></i>
+					   <span>后台管理</span>
+					   <em class="layui-nav-more"></em>
+					</a>
+					<dl class="layui-nav-child">
+                           <dd>
+                           	   <a href="javascript:;" data-url="UserServlet?state=list">
+					              <i class="iconfont icon-zhuti"  data-icon='icon-zhuti'></i>
+					              <span>用户管理</span>
+					           </a>
+                           </dd>
+                           <dd>
+                           	   <a href="javascript:;" data-url="RoleServlet?state=list">
+					              <i class="iconfont icon-zhuti"  data-icon='icon-zhuti'></i>
+					              <span>角色管理</span>
+					           </a>
+                           </dd>
+                           <dd>
+                           	   <a href="javascript:;" data-url="PowerServlet?state=list">
+					              <i class="iconfont icon-zhuti"  data-icon='icon-zhuti'></i>
+					              <span>权限管理</span>
+					           </a>
+                           </dd>
+                    </dl>
+				</li>
+				
 				<li class="layui-nav-item">
 					<a href="javascript:;">
 					   <i class="iconfont icon-shengchengbaogao" ></i>
