@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.alibaba.fastjson.JSON;
-import com.mall.dao.UserDao;
+import com.mall.dao.PowerDao;
 import com.mall.model.Powers;
 import com.mall.model.Roles;
 import com.mall.model.Users;
@@ -23,11 +23,11 @@ public class IndexServlet extends HttpServlet {
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String state = request.getParameter("state");
-		UserDao ud = new UserDao();
+		PowerDao pd = new PowerDao();
 		if (state.equals("getPower")) {
 			Users user2 =(Users) request.getSession().getAttribute("user2");
 			Roles role = user2.getRole();
-			List<Powers> powers = ud.getPowerById(role.getRoleId());
+			List<Powers> powers = pd.getPowerById(role.getRoleId());
 			System.out.println(powers);
 			String json = JSON.toJSONString(powers);
 			response.setContentType("text/html; charset=UTF-8");

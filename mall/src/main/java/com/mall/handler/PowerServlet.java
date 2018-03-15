@@ -8,26 +8,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mall.dao.UserDao;
-import com.mall.model.Users;
+import com.mall.dao.PowerDao;
+import com.mall.model.Powers;
 
 /**
- * Servlet implementation class UserServlet
+ * Servlet implementation class PowerServlet
  */
-public class UserServlet extends HttpServlet {
+public class PowerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String state = request.getParameter("state");
-		UserDao ud = new UserDao();
+		PowerDao pd = new PowerDao();
 		if (state.equals("list")) {
-			List<Users> users = ud.listAll();
-			request.setAttribute("users", users);
+			List<Powers> powers = pd.listAll();
+			request.setAttribute("powers", powers);
 			response.setContentType("text/html; charset=UTF-8");
-			System.out.println("2");
-			request.getRequestDispatcher("usermanager.jsp").forward(request, response);
+			System.out.println("3");
+			request.getRequestDispatcher("powermanager.jsp").forward(request, response);
 		}
+		
 	}
 
 	
