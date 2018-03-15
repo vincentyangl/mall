@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
 				request.getSession().setAttribute("user2", user2);
 				System.out.println(user2.getUname());
 				response.setContentType("text/html; charset=UTF-8");
-				response.sendRedirect("index2.jsp");
+				response.sendRedirect("index.jsp");
 			}
 		}
 	}
